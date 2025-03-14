@@ -16,9 +16,9 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 async function checkAndUpdateTracking() {
   try {
 
-    const trackingNumber = process.argv[2];
-    const phoneNumber = process.argv[3];
-    const callmebotApiKey = process.argv[4];
+    const trackingNumber = process.env.TRACKING_NUMBER;
+    const phoneNumber = process.env.PHONE_NUMBER;
+    const callmebotApiKey = process.env.CALLMEBOT_API_KEY;
     
     const trackingUrl = `https://iqpack.libertyexpress.com/Tracking?nGuia=${trackingNumber}`;
 
