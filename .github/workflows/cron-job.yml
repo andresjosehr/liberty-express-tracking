@@ -24,4 +24,4 @@ jobs:
           CALLMEBOT_API_KEY: ${{ secrets.CALLMEBOT_API_KEY }}
           TRACKING_NUMBER: ${{ secrets.TRACKING_NUMBER }}
           PHONE_NUMBER: ${{ secrets.PHONE_NUMBER }}
-        run: node script.js $TRACKING_NUMBER $PHONE_NUMBER $CALLMEBOT_API_KEY
+        run: node script.js
