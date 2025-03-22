@@ -1,30 +1,30 @@
-name: Periodic Tracking Update
+# name: Periodic Tracking Update
 
-on:
-  schedule:
-    - cron: '*/5 * * * *'
-  workflow_dispatch: {}
+# on:
+#   schedule:
+#     - cron: '*/5 * * * *'
+#   workflow_dispatch: {}
 
-jobs:
-  update:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+# jobs:
+#   update:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18.20.3'
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: '18.20.3'
 
-      - name: Install dependencies
-        run: npm install
+#       - name: Install dependencies
+#         run: npm install
 
-      - name: Execute tracking script
-        env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
-          CALLMEBOT_API_KEY: ${{ secrets.CALLMEBOT_API_KEY }}
-          TRACKING_NUMBER: ${{ secrets.TRACKING_NUMBER }}
-          PHONE_NUMBER: ${{ secrets.PHONE_NUMBER }}
-        run: node script.js
+#       - name: Execute tracking script
+#         env:
+#           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+#           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+#           CALLMEBOT_API_KEY: ${{ secrets.CALLMEBOT_API_KEY }}
+#           TRACKING_NUMBER: ${{ secrets.TRACKING_NUMBER }}
+#           PHONE_NUMBER: ${{ secrets.PHONE_NUMBER }}
+#         run: node script.js
